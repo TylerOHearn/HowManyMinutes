@@ -1,26 +1,25 @@
 package com.example.ageinminutescalculator
 
 import android.app.DatePickerDialog
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import timber.log.Timber
 import java.text.SimpleDateFormat
-import java.time.Year
 import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
 
-    private var textViewSelectedDate : TextView? = null
-    private var textViewAgeInMinutes : TextView? = null
+    private var textViewSelectedDate: TextView? = null
+    private var textViewAgeInMinutes: TextView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val buttonSelectDate : Button = findViewById(R.id.buttonSelectDate)
+        val buttonSelectDate: Button = findViewById(R.id.buttonSelectDate)
 
         textViewSelectedDate = findViewById(R.id.textViewSelectedDate)
         textViewAgeInMinutes = findViewById(R.id.textViewAgeInMinutes)
@@ -32,7 +31,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun clickButtonSelectDate(){
+    private fun clickButtonSelectDate() {
 
         val myCalendar = Calendar.getInstance()
         val year = myCalendar.get(Calendar.YEAR)
@@ -45,7 +44,7 @@ class MainActivity : AppCompatActivity() {
                     "Year was $selectedYear, Month was ${selectedMonth+1}, day was $selectedDayOfMonth",
                     Toast.LENGTH_LONG).show()*/
 
-                val selectedDate = "${selectedMonth+1}/$selectedDayOfMonth/$selectedYear"
+                val selectedDate = "${selectedMonth + 1}/$selectedDayOfMonth/$selectedYear"
 
                 textViewSelectedDate?.text = (selectedDate)
 
@@ -55,13 +54,17 @@ class MainActivity : AppCompatActivity() {
                 theDate?.let {
                     val selectedDateInMinutes = theDate.time / 60000
 
-                    val currentDate = simpleDateFormat.parse(simpleDateFormat.format(System.currentTimeMillis()))
-                    currentDate?.let{
+                    val currentDate =
+                        simpleDateFormat.parse(simpleDateFormat.format(System.currentTimeMillis()))
+                    currentDate?.let {
                         val currentDateInMinutes = currentDate.time / 60000
 
                         val differenceInMinutes = currentDateInMinutes - selectedDateInMinutes
 
-                        textViewAgeInMinutes?.text = differenceInMinutes.toString() }
+                        textViewAgeInMinutes?.text = differenceInMinutes.toString()
+
+                        Timber.i("User date in minutes: $differenceInMinutes")
+                    }
 
                 }
 
