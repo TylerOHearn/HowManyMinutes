@@ -6,10 +6,10 @@ A simple proof of concept app that allows you to select your brithday using an [
 
 Written in [Kotlin](https://kotlinlang.org/) using [MVC](https://medium.com/upday-devs/android-architecture-patterns-part-1-model-view-controller-3baecef5f2b6) architecture and uses the [Timber](https://github.com/JakeWharton/timber) logging library, the app strives to provide a clean and organized codebase.
 
-![Screenshot_Home](https://user-images.githubusercontent.com/72086080/213323188-b1af16fd-d6e5-43e9-a09e-03080f08a51b.png)
-![Screenshot_Date_Picker](https://user-images.githubusercontent.com/72086080/213323630-c975eec8-4cd9-4f38-a3f2-7096cf4499e3.png)
-![Screenshot_Date_Picker_Year](https://user-images.githubusercontent.com/72086080/213323659-4755947a-edc3-4e84-916f-39c74099d1d0.png)
-![Screenshot_Result](https://user-images.githubusercontent.com/72086080/213323682-2f3387c5-e7ca-44d6-b833-7435de126e14.png)
+![Screenshot_Home](Screenshots/Screenshot_Home_google-pixel4-justblack-portrait.png)
+![Screenshot_Date_Picker](Screenshots/Screenshot_Date_Picker_google-pixel4-justblack-portrait.png)
+![Screenshot_Date_Picker_Year](Screenshots/Screenshot_Date_Picker_Year_google-pixel4-justblack-portrait.png)
+![Screenshot_Result](Screenshots/Screenshot_Result_google-pixel4-justblack-portrait.png)
 
 
 
